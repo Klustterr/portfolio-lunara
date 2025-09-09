@@ -1,4 +1,3 @@
-/* Evita barra de rolagem horizontal no modo kawaii */
 .kawaii-mode,
 html.kawaii-mode,
 body.kawaii-mode,
@@ -8,7 +7,6 @@ body.kawaii-mode,
   overflow-x: hidden !important;
 }
 
-/* Classe de transição para suavizar a mudança */
 .kawaii-mode-transition button {
   transition: all 0.3s ease !important;
   border-radius: 9999px !important;
@@ -19,7 +17,6 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Ajuste para o conteúdo principal para melhor responsividade */
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,7 +28,6 @@ html, body {
     padding: 0 0.5rem;
   }
 }
-/* MODO ULTRA FOFO - KAWAII MAX LEVEL */
 
 .kawaii-mode {
   --kawaii-pink: #FF9ED2;
@@ -46,7 +42,6 @@ html, body {
   color: #FF4DA0 !important;
 }
 
-/* Fundo principal corrigido para modo kawaii */
 .kawaii-mode.min-h-screen {
   background: linear-gradient(135deg, var(--kawaii-pink-light) 0%, var(--kawaii-blue) 100%) !important;
 }
@@ -69,7 +64,6 @@ html, body {
   animation: sparkle 1.5s infinite alternate;
 }
 
-/* Corre��o para se��es no modo kawaii */
 .kawaii-mode section {
   border-radius: 30px !important;
   background: rgba(255, 255, 255, 0.85) !important;
@@ -81,7 +75,6 @@ html, body {
   overflow: visible !important;
 }
 
-/* Uso de pseudo-elemento para bordas animadas em vez de border-image */
 .kawaii-mode section::before {
   content: "";
   position: absolute;
@@ -125,7 +118,7 @@ html, body {
 .kawaii-mode button {
   background: linear-gradient(to right, var(--kawaii-pink-light), var(--kawaii-pink)) !important;
   border: 3px solid white !important;
-  border-radius: 9999px !important; /* Usar 9999px em vez de 50px para garantir forma circular */
+  border-radius: 9999px !important;
   box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4) !important;
   color: white !important;
   font-weight: bold !important;
@@ -152,7 +145,6 @@ html, body {
   filter: hue-rotate(300deg) saturate(1.5) !important;
 }
 
-/* Anima��es para o modo kawaii */
 @keyframes sparkle {
   0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
   100% { transform: scale(1.2) rotate(15deg); opacity: 1; }
@@ -170,7 +162,6 @@ html, body {
   100% { background-position: 0% 50% }
 }
 
-/* Decora��es kawaii para elementos */
 .kawaii-mode .interactive::after {
   content: "";
   display: inline-block;
@@ -184,7 +175,6 @@ html, body {
   box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4) !important;
 }
 
-/* Garantir que os botões de ícones (botões do menu superior) permaneçam circulares */
 .kawaii-mode header button,
 .icon-button {
   border-radius: 9999px !important;
@@ -193,16 +183,14 @@ html, body {
   height: 48px !important;
   min-width: 48px !important;
   aspect-ratio: 1 / 1 !important;
-  transition: all 0.3s ease-in-out !important; /* Transição mais suave */
+  transition: all 0.3s ease-in-out !important;
 }
 
-/* Estilo específico para botões de ícone durante a transição */
 .kawaii-mode-transition .icon-button {
   border-radius: 9999px !important;
-  transition: none !important; /* Prevenir transição de forma durante a mudança de modo */
+  transition: none !important;
 }
 
-/* Botão kawaii animado */
 .kawaii-button {
   position: relative;
   overflow: hidden;
@@ -232,7 +220,6 @@ html, body {
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-/* Z-index fixes para elementos sobrepostos */
 .kawaii-mode header {
   position: fixed !important;
   top: 0 !important;
@@ -248,7 +235,6 @@ html, body {
   z-index: 1;
 }
 
-/* Estilo para setas nos cards de segredos - sem círculo */
 .kawaii-mode .card-arrow {
   color: #FF6B99 !important;
   font-size: 1.2rem !important;
@@ -256,7 +242,6 @@ html, body {
   text-shadow: 0 0 5px rgba(255, 107, 153, 0.5) !important;
 }
 
-/* Estilo para o título centralizado nos cards de segredos */
 .kawaii-mode h4.text-center {
   font-family: "Comic Sans MS", "Bubblegum Sans", cursive !important;
 }
@@ -281,28 +266,23 @@ html, body {
   animation: gradient 15s ease infinite;
 }
 
-/* Corre��es para modais */
 .kawaii-mode .modal-content {
   border-radius: 20px !important;
   border: 5px solid var(--kawaii-pink-light) !important;
   box-shadow: 0 8px 32px rgba(255, 154, 210, 0.5) !important;
 }
 
-/* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
-  /* Ajustes gerais para melhorar usabilidade em dispositivos móveis */
   body, html {
     overflow-x: hidden !important;
   }
   
-  /* Ajustes para cabeçalho */
   header {
     padding: 0.8rem 0.5rem !important;
     background: rgba(255, 255, 255, 0.95) !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
   }
   
-  /* Ajustes para títulos */
   h1 {
     font-size: 1.7rem !important;
     margin-bottom: 0.5rem !important;
@@ -317,7 +297,6 @@ html, body {
     font-size: 1.1rem !important;
   }
   
-  /* Melhoria no menu de navegação */
   nav {
     width: 100% !important;
     display: flex !important;
@@ -336,7 +315,6 @@ html, body {
     text-align: center !important;
   }
   
-  /* Ajustes para botões de ação */
   .action-buttons {
     display: flex !important;
     gap: 10px !important;
@@ -350,24 +328,21 @@ html, body {
     min-width: 40px !important;
   }
   
-  /* Ajustes para o botão de modo kawaii */
   .kawaii-button {
     transform: scale(0.85);
   }
   
-  /* Ajustes para seções */
   section {
     padding: 1.5rem 1rem !important;
     margin-bottom: 1rem !important;
   }
   
-  /* Melhorias para os cards de habilidades */
   .skills-section {
     padding: 1rem 0.5rem !important;
   }
   
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas em vez de 1 */
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
   
@@ -391,7 +366,6 @@ html, body {
     margin-bottom: 0.3rem !important;
   }
   
-  /* Otimização para os segredos */
   .secrets-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
@@ -402,7 +376,6 @@ html, body {
     font-size: 0.85rem !important;
   }
   
-  /* Ajustes para galeria de fotos */
   .photos-section .swiper {
     height: auto !important;
     max-height: 300px !important;
@@ -421,7 +394,6 @@ html, body {
     bottom: 0 !important;
   }
   
-  /* Ajustes para formulário de contato */
   textarea, 
   input[type="text"],
   input[type="email"] {
@@ -434,7 +406,6 @@ html, body {
     gap: 0.8rem !important;
   }
   
-  /* Modal de habilidades */
   .modal-content {
     width: 85% !important;
     max-width: 85% !important;
@@ -444,7 +415,6 @@ html, body {
     overflow-y: auto !important;
   }
   
-  /* Ajustes para seção sobre */
   .about-content {
     flex-direction: column !important;
   }
@@ -459,19 +429,16 @@ html, body {
     padding-left: 0 !important;
   }
   
-  /* Melhoria no espaçamento geral */
   .container {
     padding: 0 0.5rem !important;
   }
   
-  /* Melhoria no footer */
   footer {
     padding: 1rem !important;
     margin-top: 1rem !important;
   }
 }
 
-/* Ajustes específicos para telefones muito pequenos */
 @media (max-width: 375px) {
   h1 {
     font-size: 1.4rem !important;
@@ -489,18 +456,15 @@ html, body {
     transform: scale(0.75);
   }
   
-  /* Reduzir para apenas uma coluna em dispositivos muito pequenos */
   .skills-grid,
   .secrets-grid {
     grid-template-columns: 1fr !important;
   }
   
-  /* Reduzir altura das imagens */
   .swiper-slide img {
     max-height: 180px !important;
   }
   
-  /* Melhorar navegação */
   nav {
     flex-wrap: wrap !important;
   }
@@ -510,14 +474,12 @@ html, body {
     padding: 0.3rem 0.5rem !important;
   }
   
-  /* Ajustar botões de ação */
   .icon-button {
     width: 36px !important;
     height: 36px !important;
     min-width: 36px !important;
   }
   
-  /* Compactar ainda mais as seções */
   section {
     padding: 1.2rem 0.8rem !important;
   }
