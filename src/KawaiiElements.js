@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
 /**
@@ -33,7 +33,7 @@ const KawaiiElements = ({ isActive }) => {
   }, [isActive]);
 
   // Adiciona cora��es ao clicar na tela quando o modo est� ativo
-  const addHeart = (e) => {
+  const addHeart = useCallback((e) => {
     if (!isActive) return;
 
     const newHeart = {
@@ -44,7 +44,7 @@ const KawaiiElements = ({ isActive }) => {
     };
 
     setHearts((prev) => [...prev.slice(-15), newHeart]); // Mant�m apenas os �ltimos 15 cora��es
-  };
+  }, [isActive]); // Memoriza a função addHeart com dependência apenas de isActive
 
   useEffect(() => {
     if (isActive) {
