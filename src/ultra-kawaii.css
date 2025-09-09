@@ -18,6 +18,19 @@ html, body {
   max-width: 100%;
   box-sizing: border-box;
 }
+
+/* Ajuste para o conteúdo principal para melhor responsividade */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 0.5rem;
+  }
+}
 /* MODO ULTRA FOFO - KAWAII MAX LEVEL */
 
 .kawaii-mode {
@@ -277,21 +290,64 @@ html, body {
 
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
-  /* Ajustes para cabeçalho */
-  header {
-    padding: 1rem 0.5rem !important;
+  /* Ajustes gerais para melhorar usabilidade em dispositivos móveis */
+  body, html {
+    overflow-x: hidden !important;
   }
   
+  /* Ajustes para cabeçalho */
+  header {
+    padding: 0.8rem 0.5rem !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Ajustes para títulos */
   h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 0.5rem !important;
   }
   
   h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;
   }
   
   h3 {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
+  }
+  
+  /* Melhoria no menu de navegação */
+  nav {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    padding: 0.5rem 0 !important;
+    margin-top: 0.5rem !important;
+    gap: 5px !important;
+  }
+  
+  nav a, nav button {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.6rem !important;
+    margin: 0 !important;
+    min-width: auto !important;
+    flex: 1 !important;
+    text-align: center !important;
+  }
+  
+  /* Ajustes para botões de ação */
+  .action-buttons {
+    display: flex !important;
+    gap: 10px !important;
+    justify-content: center !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .icon-button {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
   }
   
   /* Ajustes para o botão de modo kawaii */
@@ -301,26 +357,68 @@ html, body {
   
   /* Ajustes para seções */
   section {
-    padding: 2rem 1rem !important;
+    padding: 1.5rem 1rem !important;
+    margin-bottom: 1rem !important;
   }
   
-  /* Ajustes para cards de habilidades */
+  /* Melhorias para os cards de habilidades */
+  .skills-section {
+    padding: 1rem 0.5rem !important;
+  }
+  
   .skills-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas em vez de 1 */
+    gap: 10px !important;
   }
   
   .skill-card {
-    padding: 1rem !important;
+    padding: 0.75rem !important;
+    font-size: 0.9rem !important;
+    height: auto !important;
+    min-height: 100px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  
+  .skill-card h3 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  
+  .skill-icon {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  
+  /* Otimização para os segredos */
+  .secrets-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  .secret-card {
+    padding: 0.75rem !important;
+    font-size: 0.85rem !important;
   }
   
   /* Ajustes para galeria de fotos */
+  .photos-section .swiper {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
   .swiper-slide {
     height: auto !important;
   }
   
   .swiper-slide img {
-    max-height: 250px !important;
-    object-fit: contain;
+    max-height: 200px !important;
+    object-fit: contain !important;
+  }
+  
+  .swiper-pagination {
+    bottom: 0 !important;
   }
   
   /* Ajustes para formulário de contato */
@@ -328,25 +426,22 @@ html, body {
   input[type="text"],
   input[type="email"] {
     width: 100% !important;
+    padding: 0.6rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  form {
+    gap: 0.8rem !important;
   }
   
   /* Modal de habilidades */
   .modal-content {
-    width: 90% !important;
-    max-width: 90% !important;
+    width: 85% !important;
+    max-width: 85% !important;
     padding: 1rem !important;
-    margin: 0 auto;
-  }
-  
-  /* Ajustes para o menu de navegação */
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  nav a {
-    margin: 0.25rem;
-    font-size: 0.9rem !important;
+    margin: 0 auto !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
   }
   
   /* Ajustes para seção sobre */
@@ -355,35 +450,75 @@ html, body {
   }
   
   .about-image {
-    width: 70% !important;
-    margin: 0 auto 1.5rem auto !important;
+    width: 60% !important;
+    margin: 0 auto 1rem auto !important;
   }
   
   .about-text {
     width: 100% !important;
     padding-left: 0 !important;
   }
+  
+  /* Melhoria no espaçamento geral */
+  .container {
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Melhoria no footer */
+  footer {
+    padding: 1rem !important;
+    margin-top: 1rem !important;
+  }
 }
 
 /* Ajustes específicos para telefones muito pequenos */
 @media (max-width: 375px) {
   h1 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
   }
   
   h2 {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
   }
   
   h3 {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
   }
   
   .kawaii-button {
     transform: scale(0.75);
   }
   
+  /* Reduzir para apenas uma coluna em dispositivos muito pequenos */
+  .skills-grid,
+  .secrets-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Reduzir altura das imagens */
   .swiper-slide img {
-    max-height: 200px !important;
+    max-height: 180px !important;
+  }
+  
+  /* Melhorar navegação */
+  nav {
+    flex-wrap: wrap !important;
+  }
+  
+  nav a, nav button {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.5rem !important;
+  }
+  
+  /* Ajustar botões de ação */
+  .icon-button {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+  
+  /* Compactar ainda mais as seções */
+  section {
+    padding: 1.2rem 0.8rem !important;
   }
 }

@@ -329,23 +329,24 @@ export default function CatPortfolio() {
             >
                 {!showMain && (
                     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full">
-                        <div className="bg-white/80 shadow-md rounded-b-3xl backdrop-blur flex items-center justify-between max-w-6xl w-full px-8 py-6">
+                        <div className="bg-white/80 shadow-md rounded-b-3xl backdrop-blur flex flex-col sm:flex-row items-center justify-between max-w-6xl w-full px-4 sm:px-8 py-3 sm:py-6">
                 
                         <motion.h1
                             initial={{ y: -30, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.7 }}
-                            className="text-3xl font-bold tracking-tight"
+                            className="text-2xl sm:text-3xl font-bold tracking-tight"
                             style={{ color: TEXT_ACCENT }}
                         >
                             {translateToCatLanguage("Portfólio da Lunara")}
                         </motion.h1>
-                        <nav className="flex items-center">
-                            <ul className="flex gap-6 text-lg font-medium mr-8">
+                        
+                        <nav className="flex flex-col sm:flex-row items-center mt-2 sm:mt-0">
+                            <ul className="flex gap-2 sm:gap-6 text-sm sm:text-lg font-medium sm:mr-8">
                                 <li>
                                     <a
                                         href="#fotos"
-                                        className="transition"
+                                        className="transition px-2 py-1"
                                         style={{ color: "#FF6B99" }}
                                         onClick={e => scrollToSection(e, 'fotos')}
                                     >
@@ -355,7 +356,7 @@ export default function CatPortfolio() {
                                 <li>
                                     <a
                                         href="#skills"
-                                        className="transition"
+                                        className="transition px-2 py-1"
                                         style={{ color: "#FF6B99" }}
                                         onClick={e => scrollToSection(e, 'skills')}
                                     >
@@ -365,7 +366,7 @@ export default function CatPortfolio() {
                                 <li>
                                     <a
                                         href="#curiosidades"
-                                        className="transition"
+                                        className="transition px-2 py-1"
                                         style={{ color: "#FF6B99" }}
                                         onClick={e => scrollToSection(e, 'curiosidades')}
                                     >
@@ -375,7 +376,7 @@ export default function CatPortfolio() {
                                 <li>
                                     <a
                                         href="#contato"
-                                        className="transition"
+                                        className="transition px-2 py-1"
                                         style={{ color: "#FF6B99" }}
                                         onClick={e => scrollToSection(e, 'contato')}
                                     >
@@ -383,7 +384,7 @@ export default function CatPortfolio() {
                                     </a>
                                 </li>
                             </ul>
-                            <div className="flex gap-3">
+                            <div className="flex gap-3 mt-2 sm:mt-0">
                                 <button
                                     onClick={toggleCatLanguage}
                                     className="relative flex items-center justify-center bg-white/80 border rounded-full p-3.5 transition-all hover:bg-pink-50 transform hover:scale-105 icon-button"
@@ -603,15 +604,15 @@ export default function CatPortfolio() {
                     >
                         ✨ {translateToCatLanguage("Clique em uma habilidade para saber mais")} ✨
                     </motion.p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" style={{ gridAutoRows: "1fr" }}>
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-4xl mx-auto skills-grid" style={{ gridAutoRows: "1fr" }}>
                         {skills.map((skill, idx) => (
                             <motion.div
                                 key={idx}
-                                className="rounded-xl p-6 flex flex-col items-center justify-center shadow-md cursor-pointer relative overflow-hidden h-full"
+                                className="rounded-xl p-3 sm:p-6 flex flex-col items-center justify-center shadow-md cursor-pointer relative overflow-hidden h-full skill-card"
                                 style={{ 
                                     background: `rgba(${BG_ACCENT_RGB},0.12)`,
                                     aspectRatio: '1/1',
-                                    minHeight: '180px',
+                                    minHeight: '130px',
                                     width: '100%',
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -632,8 +633,8 @@ export default function CatPortfolio() {
                                 <div className="flex flex-col items-center h-full w-full" style={{ padding: '10px 0' }}>
                                     <div className="flex-1"></div>
                                     <div className="flex flex-col items-center">
-                                        <span className="text-4xl mb-4">{skill.icon}</span>
-                                        <span className="text-lg font-semibold text-center w-full" style={{ color: TEXT_ACCENT }}>{translateToCatLanguage(skill.title)}</span>
+                                        <span className="text-3xl sm:text-4xl mb-2 sm:mb-4 skill-icon">{skill.icon}</span>
+                                        <span className="text-sm sm:text-lg font-semibold text-center w-full" style={{ color: TEXT_ACCENT }}>{translateToCatLanguage(skill.title)}</span>
                                     </div>
                                     <div className="flex-1"></div>
                                 </div>
@@ -663,7 +664,7 @@ export default function CatPortfolio() {
                         ✨ {translateToCatLanguage("Clique nos cards para ver detalhes técnicos e trechos de código")} ✨
                     </motion.p>
                     
-                    <div className="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 sm:gap-8 secrets-grid">
                         {[
                             {
                                 title: "React Hooks",
@@ -874,7 +875,7 @@ const handleWhatsApp = (e) => {
                                         animate={{ 
                                             opacity: showMain ? 0 : 1, 
                                             y: showMain ? 20 : 0,
-                                            height: openCard === idx ? 'auto' : '150px'
+                                            height: openCard === idx ? 'auto' : '120px'
                                         }}
                                         transition={{ 
                                             duration: 0.5,
@@ -890,7 +891,7 @@ const handleWhatsApp = (e) => {
                                             boxShadow: `0 4px 12px rgba(${BG_ACCENT_RGB},0.3)`
                                         }}
                                     >
-                                        <div className="p-6 flex flex-col h-full">
+                                        <div className="p-4 sm:p-6 flex flex-col h-full secret-card">
                                             <div className="flex items-center mb-3 relative">
                                                 <motion.div 
                                                     className="text-2xl mr-3 flex items-center justify-center" 
@@ -900,7 +901,7 @@ const handleWhatsApp = (e) => {
                                                 >
                                                     {secret.icon}
                                                 </motion.div>
-                                                <h4 className="text-lg font-semibold" style={{ color: TEXT_ACCENT }}>
+                                                <h4 className="text-sm sm:text-lg font-semibold" style={{ color: TEXT_ACCENT }}>
                                                     {translateToCatLanguage(secret.title)}
                                                 </h4>
                                                 <motion.div
