@@ -765,7 +765,7 @@ const translateToCatLanguage = (text) => {
     
     return text.split(' ').map(word => {
         // Preserva pontuação e espaços
-        if (word.trim().length === 0 || /^[.,!?;:"\s]+$/.test(word)) 
+        if (word.trim().length === 0 || /^[.,!?;:" \t\r\n]+$/.test(word)) 
             return word;
         
         // Captura pontuação no final da palavra

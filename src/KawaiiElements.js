@@ -54,7 +54,7 @@ const KawaiiElements = ({ isActive }) => {
     return () => {
       window.removeEventListener("click", addHeart);
     };
-  }, [isActive]);
+  }, [isActive, addHeart]);
 
   if (!isActive) return null;
 
