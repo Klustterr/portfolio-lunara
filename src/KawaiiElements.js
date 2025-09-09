@@ -1,17 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
-/**
- * Componente que adiciona elementos decorativos kawaii quando o modo ultra fofo est� ativado
- * @param {Object} props - Propriedades do componente
- * @param {boolean} props.isActive - Se o modo kawaii est� ativo
- * @returns {React.Component}
- */
 const KawaiiElements = ({ isActive }) => {
   const [stars, setStars] = useState([]);
   const [hearts, setHearts] = useState([]);
 
-  // Gerar estrelas flutuantes quando o modo kawaii � ativado
   useEffect(() => {
     if (isActive) {
       const newStars = [];
@@ -32,7 +25,6 @@ const KawaiiElements = ({ isActive }) => {
     }
   }, [isActive]);
 
-  // Adiciona cora��es ao clicar na tela quando o modo est� ativo
   const addHeart = useCallback((e) => {
     if (!isActive) return;
 
@@ -43,8 +35,8 @@ const KawaiiElements = ({ isActive }) => {
       size: Math.random() * 30 + 15
     };
 
-    setHearts((prev) => [...prev.slice(-15), newHeart]); // Mant�m apenas os �ltimos 15 cora��es
-  }, [isActive]); // Memoriza a função addHeart com dependência apenas de isActive
+    setHearts((prev) => [...prev.slice(-15), newHeart]);
+  }, [isActive]);
 
   useEffect(() => {
     if (isActive) {
@@ -60,7 +52,6 @@ const KawaiiElements = ({ isActive }) => {
 
   return (
     <>
-      {/* Estrelas flutuantes */}
       {stars.map((star) => (
         <motion.div
           key={star.id}
@@ -86,7 +77,6 @@ const KawaiiElements = ({ isActive }) => {
         </motion.div>
       ))}
 
-      {/* Cora��es que aparecem ao clicar */}
       {hearts.map((heart) => (
         <motion.div
           key={heart.id}
