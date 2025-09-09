@@ -1,0 +1,298 @@
+/* Evita barra de rolagem horizontal no modo kawaii */
+.ka/* Correção para seções no modo kawaii */
+.kawaii-mode section {
+  border-radius: 30px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 8px 32px rgba(255, 154, 210, 0.3),
+              inset 0 0 24px rgba(255, 207, 231, 0.5) !important;
+  margin: 1rem auto !important;
+  padding: 1.5rem 2rem !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Ajuste específico para a seção de fotos no modo kawaii */
+.kawaii-mode #fotos {
+  margin-top: 1.5rem !important;
+  padding-top: 4rem !important;
+}
+
+/* Garantir que o título das fotos esteja sempre visível */
+.kawaii-mode #fotos h3 {
+  margin-top: 1.5rem !important;
+  position: relative;
+  z-index: 10;
+}html.kawaii-mode,
+body.kawaii-mode,
+.kawaii-mode body,
+.kawaii-mode html,
+.kawaii-mode-transition {
+  overflow-x: hidden !important;
+}
+
+/* Classe de transição para suavizar a mudança */
+.kawaii-mode-transition button {
+  transition: all 0.3s ease !important;
+  border-radius: 9999px !important;
+}
+
+html, body {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* MODO ULTRA FOFO - KAWAII MAX LEVEL */
+
+.kawaii-mode {
+  --kawaii-pink: #FF9ED2;
+  --kawaii-pink-light: #FFCCE5;
+  --kawaii-pink-dark: #FF6BB3;
+  --kawaii-purple: #DDA0DD;
+  --kawaii-yellow: #FFFFC2;
+  --kawaii-blue: #A6E1FA;
+  --kawaii-green: #C9FFD5;
+
+  font-family: "Comic Sans MS", "Bubblegum Sans", cursive !important;
+  color: #FF4DA0 !important;
+}
+
+/* Fundo principal corrigido para modo kawaii */
+.kawaii-mode.min-h-screen {
+  background: linear-gradient(135deg, var(--kawaii-pink-light) 0%, var(--kawaii-blue) 100%) !important;
+}
+
+.kawaii-mode h1,
+.kawaii-mode h2,
+.kawaii-mode h3 {
+  color: var(--kawaii-pink-dark) !important;
+  text-shadow: 2px 2px 0px #FFF, 4px 4px 0px rgba(255, 150, 210, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.kawaii-mode h1::before,
+.kawaii-mode h1::after,
+.kawaii-mode h2::before,
+.kawaii-mode h2::after {
+  content: "";
+  display: inline-block;
+  margin: 0 10px;
+  animation: sparkle 1.5s infinite alternate;
+}
+
+/* Corre��o para se��es no modo kawaii */
+.kawaii-mode section {
+  border-radius: 30px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 8px 32px rgba(255, 154, 210, 0.3),
+              inset 0 0 24px rgba(255, 207, 231, 0.5) !important;
+  margin: 3rem auto !important;
+  padding: 2rem !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Uso de pseudo-elemento para bordas animadas em vez de border-image */
+.kawaii-mode section::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  z-index: -1;
+  border-radius: 32px;
+  background: linear-gradient(45deg,
+    var(--kawaii-pink),
+    var(--kawaii-purple),
+    var(--kawaii-blue),
+    var(--kawaii-green),
+    var(--kawaii-yellow));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.kawaii-mode section::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  z-index: -2;
+  border-radius: 35px;
+  background: linear-gradient(45deg,
+    var(--kawaii-pink),
+    var(--kawaii-blue),
+    var(--kawaii-green),
+    var(--kawaii-purple),
+    var(--kawaii-pink));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+.kawaii-mode button {
+  background: linear-gradient(to right, var(--kawaii-pink-light), var(--kawaii-pink)) !important;
+  border: 3px solid white !important;
+  border-radius: 9999px !important; /* Usar 9999px em vez de 50px para garantir forma circular */
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4) !important;
+  color: white !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  transform-origin: center;
+  transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) !important;
+}
+
+.kawaii-mode button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 7px 20px rgba(255, 105, 180, 0.6) !important;
+}
+
+.kawaii-mode button:active {
+  transform: scale(0.95) !important;
+}
+
+.kawaii-mode p {
+  color: #F75C94 !important;
+  line-height: 1.8 !important;
+}
+
+.kawaii-mode .cat-separator {
+  filter: hue-rotate(300deg) saturate(1.5) !important;
+}
+
+/* Anima��es para o modo kawaii */
+@keyframes sparkle {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  100% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Decora��es kawaii para elementos */
+.kawaii-mode .interactive::after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  animation: float 2s ease-in-out infinite;
+}
+
+.kawaii-mode img {
+  border-radius: 20px !important;
+  border: 5px solid white !important;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4) !important;
+}
+
+/* Garantir que os botões de ícones (botões do menu superior) permaneçam circulares */
+.kawaii-mode header button,
+.icon-button {
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  aspect-ratio: 1 / 1 !important;
+  transition: all 0.3s ease-in-out !important; /* Transição mais suave */
+}
+
+/* Estilo específico para botões de ícone durante a transição */
+.kawaii-mode-transition .icon-button {
+  border-radius: 9999px !important;
+  transition: none !important; /* Prevenir transição de forma durante a mudança de modo */
+}
+
+/* Botão kawaii animado */
+.kawaii-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.kawaii-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.kawaii-button:hover::before {
+  opacity: 1;
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  25% { transform: translate(-50%, -50%) scale(1.3); }
+  50% { transform: translate(-50%, -50%) scale(1); }
+  75% { transform: translate(-50%, -50%) scale(1.3); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Z-index fixes para elementos sobrepostos */
+.kawaii-mode header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+.kawaii-mode .swiper {
+  z-index: 1;
+}
+
+/* Estilo para setas nos cards de segredos - sem círculo */
+.kawaii-mode .card-arrow {
+  color: #FF6B99 !important;
+  font-size: 1.2rem !important;
+  position: relative;
+  text-shadow: 0 0 5px rgba(255, 107, 153, 0.5) !important;
+}
+
+/* Estilo para o título centralizado nos cards de segredos */
+.kawaii-mode h4.text-center {
+  font-family: "Comic Sans MS", "Bubblegum Sans", cursive !important;
+}
+
+/* Corre��o para as barras laterais dos cards */
+.kawaii-mode .skill-card {
+  position: relative;
+  overflow: visible !important;
+}
+
+.kawaii-mode .skill-card::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  border-radius: 18px;
+  background: linear-gradient(45deg, var(--kawaii-pink), var(--kawaii-blue), var(--kawaii-purple));
+  z-index: -1;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Corre��es para modais */
+.kawaii-mode .modal-content {
+  border-radius: 20px !important;
+  border: 5px solid var(--kawaii-pink-light) !important;
+  box-shadow: 0 8px 32px rgba(255, 154, 210, 0.5) !important;
+}
